@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/firebase/firebase-tools/master/schema/firestore.rules.schema.json",
+  "collections": [
+    {
+      "name": "users",
+      "path": "users/{userId}",
+      "rules": [
+        {
+          "allow": "read",
+          "condition": "request.auth != null && request.auth.uid == userId"
+        },
+        {
+          "allow": "write",
+          "condition": "request.auth != null && request.auth.uid == userId"
+        }
+      ]
+    },
+    {
+      "name": "reports",
+      "path": "reports/{reportId}",
+      "rules": [
+        {
+          "allow": "read, delete",
+          "condition": "request.auth != null && resource.data.userId == request.auth.uid"
+        },
+        {
+          "allow": "create",
+          "condition": "request.auth != null && request.resource.data.userId == request.auth.uid && request.resource.data.keys().hasAll(['userId', 'report'])"
+        },
+        {
+          "allow": "update",
+          "condition": "request.auth != null && resource.data.userId == request.auth.uid && request.resource.data.userId == request.auth.uid"
+        }
+      ]
+    }
+  ]
+}
