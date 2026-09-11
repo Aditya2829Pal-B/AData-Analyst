@@ -1,0 +1,16 @@
+metric,value,unit,notes
+raw_rows,1067371,rows,UCI Online Retail II
+clean_sales_rows,1003340,rows,benchmark cleaning pipeline
+returns_rows,17914,rows,cancellation/return frame
+gross_revenue,19643862,GBP,quantity multiplied by unit price
+identified_customers,5852,customers,CustomerID available
+champions_customers,1464,customers,RFM high-value segment
+champions_revenue_share,69.0,percent,identified-customer revenue share
+month1_repeat_rate,23.3,percent,cohort repeat rate
+month6_repeat_rate,22.2,percent,cohort repeat rate
+month12_repeat_rate,22.7,percent,cohort repeat rate
+avg_resurrected_monthly,439,customers,typical monthly lifecycle flow
+avg_retained_monthly,390,customers,typical monthly lifecycle flow
+november_peak_revenue,1400000,GBP,approximate peak in both 2010 and 2011
+return_value_rate,3.65,percent,gross value basis
+large_cancelled_order_units,80995,units,same-day cancellation outlier
