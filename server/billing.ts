@@ -14,7 +14,7 @@ function getStripe(): Stripe {
   if (!stripeClient) {
     const key = process.env.STRIPE_SECRET_KEY;
     if (!key) throw new Error('STRIPE_SECRET_KEY is missing');
-    stripeClient = new Stripe(key, { apiVersion: '2025-01-27.acacia' });
+    stripeClient = new Stripe(key, { apiVersion: '2026-07-29.dahlia' as any });
   }
   return stripeClient;
 }
